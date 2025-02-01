@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 import localFont from "next/font/local";
@@ -26,7 +27,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
     return (
         <html lang='en'>
-            <body className={`${ibmPlexSans.className} ${bebasNeue.variable} antialiased`}>{children}</body>
+            <body className={`${ibmPlexSans.className} ${bebasNeue.variable} antialiased`}>
+                {children}
+                <Toaster />
+            </body>
         </html>
     );
 };
