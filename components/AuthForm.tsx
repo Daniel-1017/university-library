@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { FIELD_NAMES, FIELD_TYPES } from "@/constants";
-import ImageUpload from "./ImageUpload";
+import FileUpload from "./FileUpload";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
@@ -72,7 +72,14 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
                                     <FormLabel className='capitalize'>{FIELD_NAMES[field.name as keyof typeof FIELD_NAMES]}</FormLabel>
                                     <FormControl>
                                         {field.name === "universityCard" ? (
-                                            <ImageUpload onFileChange={field.onChange} />
+                                            <FileUpload
+                                                type='image'
+                                                accept='image/*'
+                                                placeholder='Upload your ID'
+                                                folder='ids'
+                                                variant='dark'
+                                                onFileChange={field.onChange}
+                                            />
                                         ) : (
                                             <Input
                                                 required
@@ -96,7 +103,7 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
 
             <p className='text-center text-base font-medium'>
                 {isSignIn ? "New to BookWise? " : "Already have an account? "}
-                <Link href={isSignIn ? "/sing-up" : "/sign-in"} className='font-bold text-primary'>
+                <Link href={isSignIn ? "/sign-up" : "/sign-in"} className='font-bold text-primary'>
                     {isSignIn ? "Create an account" : "Sign in"}
                 </Link>
             </p>
