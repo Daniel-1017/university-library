@@ -15,6 +15,13 @@
       "when": 1739030288975,
       "tag": "0001_omniscient_celestials",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1739034351061,
+      "tag": "0002_handy_viper",
+      "breakpoints": true
     }
   ]
 }
