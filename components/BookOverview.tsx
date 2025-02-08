@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import BookCover from "./BookCover";
 
-const BookOverview = ({ title, author, genre, rating, totalCopies, availableCopies, description, color, coverUrl }: Book) => {
+const BookOverview = ({ title, author, genre, rating, totalCopies, availableCopies, description, coverColor, coverUrl }: Book) => {
     return (
         <section className='book-overview'>
             <div className='flex flex-1 flex-col gap-5'>
@@ -42,9 +42,9 @@ const BookOverview = ({ title, author, genre, rating, totalCopies, availableCopi
 
             <div className='relative flex flex-1 justify-center'>
                 <div className='relative'>
-                    <BookCover variant='wide' className='z-10' coverColor={color} coverUrl={coverUrl} />
+                    <BookCover variant='wide' className='z-10' coverColor={coverColor} coverUrl={coverUrl} />
                     <div className='absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden'>
-                        <BookCover variant='wide' coverColor={color} coverUrl={coverUrl} />
+                        <BookCover variant='wide' coverColor={coverColor} coverUrl={coverUrl} />
                     </div>
                 </div>
             </div>
